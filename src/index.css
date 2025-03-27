@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+/* Add responsive base styles */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper text sizing on mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Gradient background */
+.bg-gradient {
+  background: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: #0f172a;
+  --tw-gradient-to: #1e293b;
+  --tw-gradient-stops: var(--tw-gradient-from), #1a2234 15%, #1e293b 30%, #243447 50%, #2a3c56 75%,
+    var(--tw-gradient-to);
+}
+
+.light .bg-gradient {
+  --tw-gradient-from: #f1f5f9;
+  --tw-gradient-to: #f8fafc;
+  --tw-gradient-stops: var(--tw-gradient-from), #e2e8f0 15%, #e5e7eb 30%, #f1f5f9 50%, #f8fafc 75%,
+    var(--tw-gradient-to);
+}
+
+/* Theme transition */
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+}
+
+/* Smooth transition for theme changes */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+

@@ -1,8 +1,8 @@
 "use client"
-import { useScroll, useTransform, motion } from "motion/react"
+import { useScroll, useTransform, motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
-const Timeline = ({ data }) => {
+const Timeline = ({ data = [] }) => { 
   const ref = useRef(null)
   const containerRef = useRef(null)
   const [height, setHeight] = useState(0)
@@ -21,6 +21,10 @@ const Timeline = ({ data }) => {
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height])
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
+
+  if (!data || data.length === 0) {
+    return null
+  }
 
   return (
     <div className="w-full h-auto sm:h-[180vh] bg-white dark:bg-transparent font-sans px-4 md:px-10" ref={containerRef}>
@@ -45,7 +49,7 @@ const Timeline = ({ data }) => {
               <h3 className="md:hidden block text-lg sm:text-2xl mb-2 sm:mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
-              {item.content}{" "}
+              {item.content}
             </div>
           </div>
         ))}
@@ -71,4 +75,3 @@ const Timeline = ({ data }) => {
 }
 
 export default Timeline
-

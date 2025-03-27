@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { encode } from "qss";
-import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
-import { Link } from "react-router-dom";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import cn from "../lib/utils";
+"use client"
+
+import { useEffect, useState } from "react"
+import { encode } from "qss"
+import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion"
+import { Link } from "react-router-dom"
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
+import cn from "../lib/utils"
 
 const LinkPreview = ({
   children,
@@ -15,7 +17,7 @@ const LinkPreview = ({
   isStatic = false,
   imageSrc = "",
 }) => {
-  let src;
+  let src
   if (!isStatic) {
     const params = encode({
       url,
@@ -27,43 +29,39 @@ const LinkPreview = ({
       "viewport.deviceScaleFactor": 1,
       "viewport.width": width * 3,
       "viewport.height": height * 3,
-    });
-    src = `https://api.microlink.io/?${params}`;
+    })
+    src = `https://api.microlink.io/?${params}`
   } else {
-    src = imageSrc;
+    src = imageSrc
   }
 
-  const [isOpen, setOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isOpen, setOpen] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
-  const springConfig = { stiffness: 100, damping: 15 };
-  const x = useMotionValue(0);
-  const translateX = useSpring(x, springConfig);
+  const springConfig = { stiffness: 100, damping: 15 }
+  const x = useMotionValue(0)
+  const translateX = useSpring(x, springConfig)
 
   const handleMouseMove = (event) => {
-    const targetRect = event.target.getBoundingClientRect();
-    const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce effect for subtle animation
-    x.set(offsetFromCenter);
-  };
+    const targetRect = event.target.getBoundingClientRect()
+    const eventOffsetX = event.clientX - targetRect.left
+    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2 // Reduce effect for subtle animation
+    x.set(offsetFromCenter)
+  }
 
   return (
     <>
       {isMounted && (
         <div className="hidden">
-          <img src={src} width={width} height={height} alt="hidden image" />
+          <img src={src || "/placeholder.svg"} width={width} height={height} alt="hidden image" />
         </div>
       )}
 
-      <HoverCardPrimitive.Root
-        openDelay={50}
-        closeDelay={100}
-        onOpenChange={(open) => setOpen(open)}
-      >
+      <HoverCardPrimitive.Root openDelay={50} closeDelay={100} onOpenChange={(open) => setOpen(open)}>
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
           className={cn("text-black dark:text-white", className)}
@@ -110,7 +108,8 @@ const LinkPreview = ({
         </HoverCardPrimitive.Content>
       </HoverCardPrimitive.Root>
     </>
-  );
-};
+  )
+}
 
 export default LinkPreview
+
