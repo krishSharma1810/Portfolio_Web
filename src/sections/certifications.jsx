@@ -11,7 +11,7 @@ function LinkPreviewDemo() {
         <li className="text-neutral-700 dark:text-neutral-400 text-base sm:text-lg md:text-2xl lg:text-4xl mb-6 sm:mb-10">
           Finalist Level SuperMind{" "}
           <LinkPreview
-            url="https://drive.google.com/file/d/1_k9wvAg-FAhUHn8ZXfx3qm0zUI3aYjth/view?usp=sharing"
+            url="https://drive.google.com/file/d/17oRsJhJlhKYXCK8iPHWGSfZwJ3fVNwnq/view?usp=sharing"
             className="font-bold"
           >
             GenAI Hackathon
@@ -24,7 +24,7 @@ function LinkPreviewDemo() {
         <li className="text-neutral-700 dark:text-neutral-400 text-base sm:text-lg md:text-2xl lg:text-4xl mb-6 sm:mb-10">
           Cleared{" "}
           <LinkPreview
-            url="https://drive.google.com/file/d/10gAFt1nsZXLdwhSRz-Ji7fHCOoa7dF5A/view?usp=sharing"
+            url="https://drive.google.com/file/d/1x_OF02lpHYXhy5lnWemsiak4cFsY5RaD/view?usp=sharing"
             className="font-bold"
           >
             Smart India Hackathon 2024
@@ -37,7 +37,7 @@ function LinkPreviewDemo() {
         <li className="text-neutral-700 dark:text-neutral-400 text-base sm:text-lg md:text-2xl lg:text-4xl mb-6 sm:mb-10">
           Complete{" "}
           <LinkPreview
-            url="https://drive.google.com/file/d/1Mtn1M_xoXu0iSVSIDuZLd7I4So6UQJAH/view?usp=sharing"
+            url="https://drive.google.com/file/d/17oRsJhJlhKYXCK8iPHWGSfZwJ3fVNwnq/view?usp=sharing"
             className="font-bold"
           >
             Generative AI
@@ -49,7 +49,7 @@ function LinkPreviewDemo() {
         </li>
         <li className="text-neutral-700 dark:text-neutral-400 text-base sm:text-lg md:text-2xl lg:text-4xl mb-6 sm:mb-10">
           <LinkPreview
-            url="https://drive.google.com/file/d/1i1D98bmzS3C9hJ8679sNj7BZ3ffUFlC6/view?usp=sharing"
+            url="https://drive.google.com/file/d/1FdrFuvfeHts-eaJSnHde12aGn2l6soZ2/view?usp=sharing"
             className="font-bold"
           >
             Node.js, Express, MongoDB
@@ -61,7 +61,7 @@ function LinkPreviewDemo() {
         </li>
         <li className="text-neutral-700 dark:text-neutral-400 text-base sm:text-lg md:text-2xl lg:text-4xl mb-6 sm:mb-10">
           <LinkPreview
-            url="https://drive.google.com/file/d/1TsuNsGACw8v24p_pjC5Th7qBc4kGiEyW/view?usp=sharing"
+            url="https://drive.google.com/file/d/1D_H8ofyttQF9zophULEDXs6ViHPDCJWb/view?usp=sharing"
             className="font-bold"
           >
             Responsive Web Develpoment
